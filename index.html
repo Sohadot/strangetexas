@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Strange Texas — The Weird, Haunted & Unexplained</title>
+  <meta name="description" content="Discover the strangest, most haunted, and unexplained places, legends, and stories from the Lone Star State."/>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet"/>
+  <style>
+    :root { --black:#0a0805; --dark:#110e0a; --amber:#c8860a; --cream:#e8dcc8; }
+    * { margin:0; padding:0; box-sizing:border-box; }
+    html { scroll-behavior:smooth; }
+    body { background:var(--black); color:var(--cream); font-family:'Crimson Text',serif; font-size:18px; overflow-x:hidden; }
+
+    nav { position:fixed; top:0; left:0; right:0; z-index:100; padding:1.2rem 2rem; display:flex; align-items:center; justify-content:space-between; background:linear-gradient(to bottom,rgba(10,8,5,0.97),transparent); }
+    .nav-logo { font-family:'Cinzel Decorative',serif; font-size:1rem; color:var(--amber); text-decoration:none; }
+    .nav-links { display:flex; gap:2rem; list-style:none; }
+    .nav-links a { font-size:0.72rem; letter-spacing:0.25em; text-transform:uppercase; color:rgba(232,220,200,0.55); text-decoration:none; transition:color 0.3s; }
+    .nav-links a:hover { color:var(--amber); }
+
+    .hero { position:relative; min-height:100vh; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; padding:2rem; overflow:hidden; background:radial-gradient(ellipse at 50% 60%,#1a0e00 0%,#0a0805 70%); }
+    .hero-glow { position:absolute; inset:0; background:radial-gradient(ellipse 80% 50% at 50% 80%,rgba(139,26,26,0.18) 0%,transparent 70%),radial-gradient(ellipse 60% 40% at 50% 100%,rgba(200,134,10,0.1) 0%,transparent 60%); animation:pulse 8s ease-in-out infinite; }
+    @keyframes pulse { 0%,100%{opacity:.6} 50%{opacity:1} }
+    .mist { position:absolute; bottom:0; left:0; right:0; height:200px; background:linear-gradient(to top,rgba(200,134,10,0.06) 0%,transparent 100%); animation:mistFloat 6s ease-in-out infinite alternate; }
+    @keyframes mistFloat { from{transform:translateY(8px)} to{transform:translateY(-8px)} }
+    .eyebrow { font-size:0.75rem; letter-spacing:0.45em; text-transform:uppercase; color:var(--amber); margin-bottom:1.5rem; animation:fadeDown 1s ease both; }
+    .site-title { font-family:'Cinzel Decorative',serif; font-size:clamp(2.8rem,9vw,6.5rem); font-weight:700; line-height:1.05; color:var(--cream); text-shadow:0 0 60px rgba(200,134,10,0.25),0 0 120px rgba(139,26,26,0.15); animation:fadeDown 1s 0.2s ease both; position:relative; z-index:2; }
+    .site-title span { color:var(--amber); display:block; }
+    .divider { width:100px; height:1px; background:linear-gradient(to right,transparent,var(--amber),transparent); margin:2rem auto; position:relative; animation:fadeIn 1s 0.5s ease both; }
+    .divider::before,.divider::after { content:'✦'; position:absolute; top:50%; transform:translateY(-50%); color:var(--amber); font-size:0.55rem; }
+    .divider::before{left:-0.9rem} .divider::after{right:-0.9rem}
+    .tagline { font-size:1.15rem; font-style:italic; color:rgba(232,220,200,0.65); max-width:480px; line-height:1.75; animation:fadeIn 1s 0.7s ease both; }
+    .scroll-hint { position:absolute; bottom:2rem; left:50%; transform:translateX(-50%); display:flex; flex-direction:column; align-items:center; gap:0.5rem; animation:fadeIn 1s 1.2s ease both; }
+    .scroll-hint span { font-size:0.65rem; letter-spacing:0.35em; text-transform:uppercase; color:var(--amber); opacity:0.5; }
+    .scroll-line { width:1px; height:50px; background:linear-gradient(to bottom,var(--amber),transparent); animation:scrollPulse 2s ease-in-out infinite; }
+    @keyframes scrollPulse { 0%{transform:scaleY(0);transform-origin:top} 50%{transform:scaleY(1);transform-origin:top} 51%{transform:scaleY(1);transform-origin:bottom} 100%{transform:scaleY(0);transform-origin:bottom} }
+
+    .quote-section { padding:5rem 2rem; text-align:center; background:linear-gradient(to bottom,var(--black),#0f0a06,var(--black)); position:relative; }
+    .quote-section::before { content:'"'; position:absolute; top:0.5rem; left:50%; transform:translateX(-50%); font-family:'Cinzel Decorative',serif; font-size:9rem; color:rgba(200,134,10,0.05); line-height:1; pointer-events:none; }
+    blockquote { font-size:clamp(1.2rem,2.8vw,1.9rem); font-style:italic; color:rgba(232,220,200,0.78); max-width:680px; margin:0 auto; line-height:1.65; }
+    blockquote cite { display:block; margin-top:1.2rem; font-size:0.72rem; font-style:normal; letter-spacing:0.35em; text-transform:uppercase; color:var(--amber); opacity:0.6; }
+
+    .section-header { text-align:center; padding:5rem 2rem 3rem; }
+    .section-label { font-size:0.68rem; letter-spacing:0.42em; text-transform:uppercase; color:var(--amber); margin-bottom:1rem; display:block; }
+    .section-title { font-family:'Cinzel Decorative',serif; font-size:clamp(1.6rem,3.5vw,2.8rem); color:var(--cream); }
+    .section-rule { width:55px; height:1px; background:var(--amber); margin:1.5rem auto 0; opacity:0.45; }
+
+    .articles-wrap { max-width:1100px; margin:0 auto; padding:0 1.5rem 6rem; }
+    .articles-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(320px,1fr)); gap:2px; }
+
+    .card { position:relative; background:var(--dark); border:1px solid rgba(200,134,10,0.08); text-decoration:none; color:inherit; display:flex; flex-direction:column; transition:all 0.4s ease; overflow:hidden; }
+    .card:hover { border-color:rgba(200,134,10,0.35); transform:translateY(-4px); box-shadow:0 20px 40px rgba(0,0,0,0.4); }
+    .card-img-wrap { overflow:hidden; }
+    .card-img { width:100%; height:220px; object-fit:cover; filter:brightness(0.85); transition:all 0.5s ease; display:block; }
+    .card:hover .card-img { filter:brightness(1); transform:scale(1.04); }
+    .card-body { padding:1.8rem; display:flex; flex-direction:column; gap:0.8rem; flex:1; }
+    .card-cat { font-size:0.63rem; letter-spacing:0.35em; text-transform:uppercase; color:var(--amber); }
+    .card-title { font-family:'Cinzel Decorative',serif; font-size:1rem; color:var(--cream); line-height:1.45; }
+    .card-excerpt { font-size:0.92rem; font-style:italic; color:rgba(232,220,200,0.5); line-height:1.7; flex:1; }
+    .card-link { font-size:0.68rem; letter-spacing:0.3em; text-transform:uppercase; color:var(--amber); opacity:0.55; transition:opacity 0.3s; margin-top:0.5rem; }
+    .card:hover .card-link { opacity:1; }
+
+    .card.featured { grid-column:span 2; flex-direction:row; }
+    .card.featured .card-img-wrap { width:45%; min-width:45%; }
+    .card.featured .card-img { width:100%; height:100%; }
+    .card.featured .card-body { justify-content:center; padding:2.5rem; }
+    .card.featured .card-title { font-size:1.3rem; }
+    @media(max-width:700px) { .card.featured { grid-column:span 1; flex-direction:column; } .card.featured .card-img-wrap { width:100%; } .card.featured .card-img { height:220px; } }
+
+    .cats-wrap { max-width:1100px; margin:0 auto; padding:0 1.5rem 6rem; }
+    .cats-row { display:flex; flex-wrap:wrap; gap:2px; }
+    .cat { flex:1; min-width:140px; padding:1.8rem 1rem; border:1px solid rgba(200,134,10,0.08); text-align:center; text-decoration:none; color:inherit; background:var(--dark); transition:all 0.3s; }
+    .cat:hover { background:rgba(200,134,10,0.07); border-color:rgba(200,134,10,0.28); }
+    .cat-icon { font-size:1.7rem; display:block; margin-bottom:0.7rem; }
+    .cat-name { font-family:'Cinzel Decorative',serif; font-size:0.72rem; color:var(--cream); display:block; margin-bottom:0.25rem; }
+    .cat-count { font-size:0.65rem; letter-spacing:0.2em; color:var(--amber); opacity:0.55; }
+
+    footer { border-top:1px solid rgba(200,134,10,0.1); padding:3rem 2rem; text-align:center; }
+    .footer-logo { font-family:'Cinzel Decorative',serif; font-size:1.4rem; color:var(--amber); display:block; margin-bottom:0.8rem; }
+    .footer-sub { font-size:0.78rem; font-style:italic; color:rgba(232,220,200,0.28); }
+    .footer-nav { display:flex; justify-content:center; gap:2rem; list-style:none; margin-top:2rem; }
+    .footer-nav a { font-size:0.68rem; letter-spacing:0.25em; text-transform:uppercase; color:rgba(232,220,200,0.28); text-decoration:none; transition:color 0.3s; }
+    .footer-nav a:hover { color:var(--amber); }
+
+    @keyframes fadeDown { from{opacity:0;transform:translateY(-20px)} to{opacity:1;transform:translateY(0)} }
+    @keyframes fadeIn { from{opacity:0} to{opacity:1} }
+    .reveal { opacity:0; transform:translateY(28px); transition:opacity 0.8s ease,transform 0.8s ease; }
+    .reveal.visible { opacity:1; transform:translateY(0); }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">Strange Texas</a>
+  <ul class="nav-links">
+    <li><a href="#stories">Stories</a></li>
+    <li><a href="#categories">Categories</a></li>
+    <li><a href="#">About</a></li>
+  </ul>
+</nav>
+
+<section class="hero">
+  <div class="hero-glow"></div>
+  <div class="mist"></div>
+  <p class="eyebrow">The Lone Star State's Darkest Secrets</p>
+  <h1 class="site-title">Strange<span>Texas</span></h1>
+  <div class="divider"></div>
+  <p class="tagline">Where haunted houses whisper, ghost lights dance in the desert, and the truth is stranger than fiction.</p>
+  <div class="scroll-hint"><span>Explore</span><div class="scroll-line"></div></div>
+</section>
+
+<section class="quote-section">
+  <blockquote>
+    "Does a house simply shelter the living, or does it also record the echoes of the dead?"
+    <cite>Strange Texas</cite>
+  </blockquote>
+</section>
+
+<section id="stories">
+  <div class="section-header reveal">
+    <span class="section-label">Latest Stories</span>
+    <h2 class="section-title">Tales from the Lone Star</h2>
+    <div class="section-rule"></div>
+  </div>
+  <div class="articles-wrap">
+    <div class="articles-grid">
+
+      <a href="the-grove.html" class="card featured reveal">
+        <div class="card-img-wrap">
+          <img src="Thegover.png" alt="The Grove Jefferson Texas" class="card-img"/>
+        </div>
+        <div class="card-body">
+          <span class="card-cat">👻 Haunted Places</span>
+          <h3 class="card-title">The Human Story of The Grove in Jefferson</h3>
+          <p class="card-excerpt">Built in 1861, The Grove stands as a silent witness to over 160 years of lives lived, lost, and perhaps remembered. A Victorian home where the past refuses to stay buried.</p>
+          <span class="card-link">Read the story →</span>
+        </div>
+      </a>
+
+      <a href="marfa-lights.html" class="card reveal">
+        <div class="card-img-wrap">
+          <img src="Themarfalight.png" alt="The Marfa Lights" class="card-img"/>
+        </div>
+        <div class="card-body">
+          <span class="card-cat">✨ Strange Phenomena</span>
+          <h3 class="card-title">The Mysterious Marfa Lights</h3>
+          <p class="card-excerpt">There is a stretch of highway in West Texas where the night does something it simply should not do. The lights have been appearing for over 140 years. Nobody has explained them.</p>
+          <span class="card-link">Read the story →</span>
+        </div>
+      </a>
+
+      <a href="ghost-towns.html" class="card reveal">
+        <div class="card-img-wrap">
+          <img src="Fiveghosttownstexas.png" alt="Five Ghost Towns Texas" class="card-img"/>
+        </div>
+        <div class="card-body">
+          <span class="card-cat">🏚️ Ghost Towns</span>
+          <h3 class="card-title">Five Ghost Towns in Texas Worth the Drive</h3>
+          <p class="card-excerpt">Towns abandoned by time, reclaimed by desert and silence. Real places where history stopped and never restarted. You can still walk through what remains.</p>
+          <span class="card-link">Read the story →</span>
+        </div>
+      </a>
+
+      <a href="ufo-sightings.html" class="card reveal">
+        <div class="card-img-wrap">
+          <img src="TexasUFOSightings.png" alt="Texas UFO Sightings" class="card-img"/>
+        </div>
+        <div class="card-body">
+          <span class="card-cat">🛸 UFO and Paranormal</span>
+          <h3 class="card-title">Texas UFO Sightings That Were Never Explained</h3>
+          <p class="card-excerpt">From a crashed alien buried in a small-town cemetery in 1897 to lights that stopped car engines cold. Texas has a UFO history unlike any other state.</p>
+          <span class="card-link">Read the story →</span>
+        </div>
+      </a>
+
+      <a href="chupacabra.html" class="card reveal">
+        <div class="card-img-wrap">
+          <img src="TheLegendoftheTexasChupacabra.png" alt="Texas Chupacabra" class="card-img"/>
+        </div>
+        <div class="card-body">
+          <span class="card-cat">🦎 Myths and Legends</span>
+          <h3 class="card-title">The Legend of the Texas Chupacabra</h3>
+          <p class="card-excerpt">Something is killing the animals in South Texas. Ranchers wake up to find their goats dead, drained of blood, no signs of struggle. Whatever did it is always gone before sunrise.</p>
+          <span class="card-link">Read the story →</span>
+        </div>
+      </a>
+
+      <a href="unsolved-murders.html" class="card reveal">
+        <div class="card-img-wrap">
+          <img src="UnsolvedMurdersThatStillHauntTexasTrueCrime.png" alt="Unsolved Murders Texas" class="card-img"/>
+        </div>
+        <div class="card-body">
+          <span class="card-cat">🔍 True Crime</span>
+          <h3 class="card-title">Unsolved Murders That Still Haunt Texas</h3>
+          <p class="card-excerpt">Cases that gripped the state, made national headlines, and were never solved. The killers were never caught. The families are still waiting.</p>
+          <span class="card-link">Read the story →</span>
+        </div>
+      </a>
+
+      <a href="strange-animals.html" class="card reveal">
+        <div class="card-img-wrap">
+          <img src="StrangeNature.png" alt="Strange Animals Texas" class="card-img"/>
+        </div>
+        <div class="card-body">
+          <span class="card-cat">🦇 Strange Nature</span>
+          <h3 class="card-title">The Silent Residents: Texas's Most Unusual Souls</h3>
+          <p class="card-excerpt">A lizard that weeps blood to survive. A salamander that has never seen light. Twenty million bats rising as one living storm. Ancient stories written in flesh and bone.</p>
+          <span class="card-link">Read the story →</span>
+        </div>
+      </a>
+
+      <a href="underground-caves.html" class="card reveal">
+        <div class="card-img-wrap">
+          <img src="TheSilentDeep.png" alt="Underground Caves Texas" class="card-img"/>
+        </div>
+        <div class="card-body">
+          <span class="card-cat">🕳️ Hidden Places</span>
+          <h3 class="card-title">The Silent Deep: Hidden Worlds Beneath Texas</h3>
+          <p class="card-excerpt">While the world above is filled with noise and progress, another world, slower and deeply quiet, breathes beneath our feet. The hidden cathedrals of stone and water.</p>
+          <span class="card-link">Read the story →</span>
+        </div>
+      </a>
+
+      <a href="weird-festivals.html" class="card reveal">
+        <div class="card-img-wrap">
+          <img src="Weiredsttexas.jpg" alt="Weird Texas Festivals" class="card-img"/>
+        </div>
+        <div class="card-body">
+          <span class="card-cat">🎭 Strange Culture</span>
+          <h3 class="card-title">The Joyful Absurdity: Texas Festivals That Defy Logic</h3>
+          <p class="card-excerpt">Roadkill cook-offs, armadillo races, chicken poop bingo. When you give people enough space and enough sun, they create celebrations impossible anywhere else.</p>
+          <span class="card-link">Read the story →</span>
+        </div>
+      </a>
+
+      <a href="strange-laws.html" class="card reveal">
+        <div class="card-img-wrap">
+          <img src="TheEchoesofTexasLaw.png" alt="Strange Texas Laws" class="card-img"/>
+        </div>
+        <div class="card-body">
+          <span class="card-cat">⚖️ Strange Culture</span>
+          <h3 class="card-title">Frozen in Time: The Echoes of Texas Law</h3>
+          <p class="card-excerpt">Laws are more than just rules. They are reflections of the people and moments that created them. In Texas, the legal code is a landscape of ghosts.</p>
+          <span class="card-link">Read the story →</span>
+        </div>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<section id="categories">
+  <div class="section-header reveal">
+    <span class="section-label">Browse by Theme</span>
+    <h2 class="section-title">What Calls to You?</h2>
+    <div class="section-rule"></div>
+  </div>
+  <div class="cats-wrap">
+    <div class="cats-row reveal">
+      <a href="#" class="cat"><span class="cat-icon">👻</span><span class="cat-name">Haunted</span><span class="cat-count">2 stories</span></a>
+      <a href="#" class="cat"><span class="cat-icon">🛸</span><span class="cat-name">UFO</span><span class="cat-count">2 stories</span></a>
+      <a href="#" class="cat"><span class="cat-icon">🦎</span><span class="cat-name">Legends</span><span class="cat-count">2 stories</span></a>
+      <a href="#" class="cat"><span class="cat-icon">🔍</span><span class="cat-name">True Crime</span><span class="cat-count">1 story</span></a>
+      <a href="#" class="cat"><span class="cat-icon">🌿</span><span class="cat-name">Nature</span><span class="cat-count">2 stories</span></a>
+      <a href="#" class="cat"><span class="cat-icon">🎭</span><span class="cat-name">Culture</span><span class="cat-count">2 stories</span></a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <span class="footer-logo">Strange Texas</span>
+  <p class="footer-sub">The weird, the haunted, and the unexplained — from the Lone Star State</p>
+  <ul class="footer-nav">
+    <li><a href="#">Home</a></li>
+    <li><a href="#">Stories</a></li>
+    <li><a href="#">About</a></li>
+  </ul>
+</footer>
+
+<script>
+  const reveals = document.querySelectorAll('.reveal');
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach((e, i) => {
+      if (e.isIntersecting) {
+        setTimeout(() => e.target.classList.add('visible'), i * 100);
+        obs.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  reveals.forEach(el => obs.observe(el));
+</script>
+
+</body>
+</html>
