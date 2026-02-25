@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About — Strange Texas</title>
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; script-src 'self' 'unsafe-inline';">
+  <meta http-equiv="X-Content-Type-Options" content="nosniff">
+  <meta http-equiv="X-Frame-Options" content="SAMEORIGIN">
+  <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
+  <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=()">
+  <meta name="description" content="Strange Texas was built on a simple belief. That the most interesting stories are not invented. They are found."/>
+  <meta property="og:title" content="About — Strange Texas"/>
+  <meta property="og:description" content="Some names carry a question inside them. Strange Texas is one of those names."/>
+  <meta property="og:image" content="https://strangetexas.com/Thegover.png"/>
+  <meta property="og:url" content="https://strangetexas.com/about.html"/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:site_name" content="Strange Texas"/>
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:title" content="About — Strange Texas"/>
+  <meta name="twitter:description" content="Some names carry a question inside them. Strange Texas is one of those names."/>
+  <meta name="twitter:image" content="https://strangetexas.com/Thegover.png"/>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet"/>
+  <style>
+    :root { --black:#0a0805; --dark:#110e0a; --amber:#c8860a; --cream:#e8dcc8; }
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body { background:var(--black); color:var(--cream); font-family:'Crimson Text',serif; font-size:19px; line-height:1.8; overflow-x:hidden; }
+
+    nav { position:fixed; top:0; left:0; right:0; z-index:100; padding:1.2rem 2rem; display:flex; align-items:center; justify-content:space-between; background:rgba(10,8,5,0.97); border-bottom:1px solid rgba(200,134,10,0.1); }
+    .nav-logo { font-family:'Cinzel Decorative',serif; font-size:1rem; color:var(--amber); text-decoration:none; }
+    .nav-back { font-size:0.72rem; letter-spacing:0.25em; text-transform:uppercase; color:rgba(232,220,200,0.55); text-decoration:none; transition:color 0.3s; }
+    .nav-back:hover { color:var(--amber); }
+
+    .hero {
+      min-height:60vh; display:flex; flex-direction:column;
+      align-items:center; justify-content:center; text-align:center;
+      padding:8rem 2rem 5rem;
+      background:radial-gradient(ellipse at 50% 60%, #1a0e00 0%, #0a0805 70%);
+      position:relative; overflow:hidden;
+    }
+    .hero::before {
+      content:''; position:absolute; inset:0;
+      background:radial-gradient(ellipse 70% 50% at 50% 80%, rgba(139,26,26,0.12) 0%, transparent 70%);
+    }
+    .hero-label { font-size:0.68rem; letter-spacing:0.45em; text-transform:uppercase; color:var(--amber); margin-bottom:1.5rem; opacity:0.7; }
+    .hero-title { font-family:'Cinzel Decorative',serif; font-size:clamp(2rem,6vw,4.5rem); color:var(--cream); line-height:1.1; position:relative; z-index:2; }
+    .hero-title span { color:var(--amber); }
+    .hero-divider { width:60px; height:1px; background:linear-gradient(to right, transparent, var(--amber), transparent); margin:2rem auto; }
+    .hero-sub { font-size:1.1rem; font-style:italic; color:rgba(232,220,200,0.55); max-width:420px; }
+
+    .about-wrap { max-width:780px; margin:0 auto; padding:5rem 2rem 7rem; }
+
+    .opening {
+      font-family:'Cinzel Decorative',serif;
+      font-size:clamp(1.1rem,2.5vw,1.6rem);
+      color:var(--cream); line-height:1.5;
+      margin-bottom:3rem; text-align:center;
+    }
+    .opening span { color:var(--amber); }
+
+    .about-divider { width:40px; height:1px; background:var(--amber); opacity:0.3; margin:3rem auto; }
+
+    .about-body p { margin-bottom:1.8rem; color:rgba(232,220,200,0.82); }
+
+    .closing {
+      margin-top:4rem; padding:3rem;
+      border:1px solid rgba(200,134,10,0.15);
+      background:rgba(200,134,10,0.03);
+      text-align:center;
+    }
+    .closing p {
+      font-family:'Cinzel Decorative',serif;
+      font-size:clamp(1rem,2vw,1.3rem);
+      color:var(--cream); line-height:1.6;
+      margin:0;
+    }
+    .closing span { color:var(--amber); }
+
+    .stories-btn {
+      display:inline-block; margin-top:3rem;
+      font-size:0.72rem; letter-spacing:0.35em; text-transform:uppercase;
+      color:var(--amber); text-decoration:none;
+      border:1px solid rgba(200,134,10,0.3); padding:1rem 2.5rem;
+      transition:all 0.3s;
+    }
+    .stories-btn:hover { background:rgba(200,134,10,0.1); border-color:var(--amber); }
+
+    footer { border-top:1px solid rgba(200,134,10,0.1); padding:3rem 2rem; text-align:center; }
+    .footer-logo { font-family:'Cinzel Decorative',serif; font-size:1.4rem; color:var(--amber); display:block; margin-bottom:0.8rem; }
+    .footer-sub { font-size:0.78rem; font-style:italic; color:rgba(232,220,200,0.28); }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">Strange Texas</a>
+  <a href="index.html" class="nav-back">← All Stories</a>
+</nav>
+
+<div class="hero">
+  <p class="hero-label">The Story Behind the Stories</p>
+  <h1 class="hero-title">Strange<span>Texas</span></h1>
+  <div class="hero-divider"></div>
+  <p class="hero-sub">Some names carry a question inside them.</p>
+</div>
+
+<div class="about-wrap">
+
+  <p class="opening">
+    <span>Strange Texas</span> is one of those names.
+  </p>
+
+  <div class="about-body">
+
+    <p>When we first encountered it, we did not choose it so much as it chose us. There was something in the pairing of those two words, Strange and Texas, that felt like an open door. Not a door to horror or cheap mystery, but a door to something older and more honest. A door to the kind of stories that real places accumulate over centuries, quietly, without asking for attention.</p>
+
+    <div class="about-divider"></div>
+
+    <p>Texas is not like other places. This is not sentiment. It is geography, history, and something harder to name. A state so large it contains its own climates, its own cultures, its own silences. A place where the distance between towns can feel like the distance between worlds. Where the land itself seems to remember things that the people living on it have long since forgotten.</p>
+
+    <p>Some places earn their strangeness cheaply, through rumor and exaggeration. Texas earned its differently. Through a history that was genuinely violent and genuinely vast. Through landscapes that do not comfort the eye so much as challenge it. Through a character so particular that it resists every attempt to reduce it to something simple or familiar.</p>
+
+    <div class="about-divider"></div>
+
+    <p>Strange Texas was built on a simple belief. That the most interesting stories are not invented. They are found. In old houses that refuse to stay quiet. In desert highways where the night does its own impossible things. In bayous that suddenly glow blue after dark. In legal codes that preserved the ghost of a world that no longer exists.</p>
+
+    <p>We are not here to frighten you. We are not here to convince you of anything. We are here because some places earn their mystery honestly, over generations, and Texas has been earning its for a very long time.</p>
+
+  </div>
+
+  <div class="closing">
+    <p>This is where we keep the<br/><span>stories it left behind.</span></p>
+  </div>
+
+  <div style="text-align:center; margin-top:3rem;">
+    <a href="index.html" class="stories-btn">← Read the Stories</a>
+  </div>
+
+</div>
+
+<footer>
+  <span class="footer-logo">Strange Texas</span>
+  <p class="footer-sub">The weird, the haunted, and the unexplained — from the Lone Star State</p>
+</footer>
+
+</body>
+</html>
