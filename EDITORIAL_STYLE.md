@@ -37,6 +37,24 @@
 - **فحص التداخل إلزامي:** قبل أي مقال، يُفحص المحتوى الموجود لتجنّب تكرار موضوع أو حتى زاوية.
 - **معيار القبول:** إن لم يكن المقال صادقاً + مفاهيمياً + سردياً + فائق الجودة معاً — لا يُنشر.
 
+## صندوق "At a Glance" — عنصر مرجعي قياسي إلزامي
+**كل مقال** ينتهي بصندوق مرجعي (`.fact-box`) بعنوان **"At a Glance"**. هذا يحوّل الموقع من مدوّنة إلى **مرجع منظّم (Reference Entries)**: هوية موحّدة، وصول سريع للمعلومة، تجربة أفضل على الهاتف، ودعم SEO (بيانات منظّمة داخل الصفحة تساعد على المقتطفات المميّزة).
+
+**قاعدة ثابتة:** الحقول تتغيّر حسب نوع المقال، لكن **حقل `Status` حاضر دائماً كآخر سطر** ليعرف القارئ طبيعة الموضوع فوراً دون إفساد السرد.
+
+**قيم `Status` المعتمدة:** `Unresolved` · `Explained` · `Historical` · `Folklore` · `Active Tradition` · `Natural Phenomenon` (تُوسَّع عند الحاجة).
+
+**قوالب الحقول حسب النوع:**
+| النوع | الحقول |
+|---|---|
+| **أسطورة / كائن (Legend/Cryptid)** | Type · Location · First Report · Key Witness · Primary Evidence · Common Explanations · **Status** |
+| **ظاهرة طبيعية (Phenomenon)** | Type · Region · Best Season · Scientific Basis · **Status** |
+| **جريمة (True Crime)** | Type · Date · Victims · Investigation · **Status** |
+| **قانون غريب (Strange Law)** | Type · Jurisdiction · Origin · **Status** (Current Status) |
+| **مكان (Place)** | Region · Landscape · Best Time · Atmosphere · **Status** |
+
+> الصندوق مرجع، لا خاتمة: يأتي **بعد** الفقرة الختامية التأمّلية وقبل قسم Related، فلا يكسر شاعرية النهاية.
+
 ---
 
 ## 1. الافتتاحية — Scene, not summary
@@ -114,6 +132,7 @@
 - [ ] هناك بُعد إنساني واضح.
 - [ ] الخاتمة تأمّل يتّسع، لا تلخيص.
 - [ ] الطول 1,300–1,700 كلمة.
+- [ ] صندوق **"At a Glance"** موجود، بحقول مناسبة للنوع، وينتهي بحقل **Status**.
 - [ ] العنوان (`<title>`), الوصف, OG, JSON-LD (Article + Breadcrumb), وقسم Related مكتملة.
 
 ## ما يجب تجنّبه دائماً — The "not like everyone else" list
