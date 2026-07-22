@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8"/>
+  <meta name="google-adsense-account" content="ca-pub-3711640853752026">
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Strange Texas — The Weird, Haunted & Unexplained</title>
   <meta name="description" content="Discover the strangest, most haunted, and unexplained places, legends, landscapes, and stories from the Lone Star State."/>
@@ -9,7 +10,7 @@
   <meta name="author" content="Strange Texas Editorial"/>
   <link rel="canonical" href="https://strangetexas.com/"/>
 
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com; frame-src https://www.googletagmanager.com; connect-src 'self' https://www.google-analytics.com https://analytics.google.com https://www.googletagmanager.com;">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://*.googlesyndication.com https://*.googleadservices.com https://www.google-analytics.com https://*.doubleclick.net; frame-src https://www.googletagmanager.com https://*.googlesyndication.com https://*.doubleclick.net; connect-src 'self' https://www.google-analytics.com https://analytics.google.com https://www.googletagmanager.com https://*.googlesyndication.com https://*.doubleclick.net;">
   <meta http-equiv="X-Content-Type-Options" content="nosniff">
   <meta http-equiv="X-Frame-Options" content="SAMEORIGIN">
   <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
@@ -540,6 +541,21 @@
       opacity:1;
       transform:translateY(0);
     }
+
+    /* Category filter chips (buttons) */
+    .cat {
+      font-family:inherit;
+      cursor:pointer;
+      appearance:none;
+    }
+    .cat.is-active {
+      background:rgba(200,134,10,0.12);
+      border-color:rgba(200,134,10,0.5);
+    }
+    .cat.is-active .cat-name { color:var(--amber); }
+
+    /* Filtered-out story cards */
+    .card.is-hidden { display:none !important; }
   </style>
 
   <!-- Google Tag Manager -->
@@ -597,7 +613,7 @@
   <div class="articles-wrap">
     <div class="articles-grid">
 
-      <a href="hidden-landscapes-texas.html" class="card reveal">
+      <a href="hidden-landscapes-texas.html" class="card reveal" data-cat="nature">
         <div class="card-img-wrap">
           <img src="hero.jpg" alt="Hidden Landscapes of Texas" class="card-img"/>
         </div>
@@ -609,7 +625,7 @@
         </div>
       </a>
 
-      <a href="beautiful-strange-texas.html" class="card reveal">
+      <a href="beautiful-strange-texas.html" class="card reveal" data-cat="nature">
         <div class="card-img-wrap">
           <img src="beautiful-strange-texas.jpg" alt="Beautiful Strange Texas" class="card-img"/>
         </div>
@@ -621,7 +637,7 @@
         </div>
       </a>
 
-      <a href="the-grove.html" class="card reveal">
+      <a href="the-grove.html" class="card reveal" data-cat="haunted">
         <div class="card-img-wrap">
           <img src="Thegover.jpg" alt="The Grove Jefferson Texas" class="card-img"/>
         </div>
@@ -633,7 +649,7 @@
         </div>
       </a>
 
-      <a href="blue-ghost-bayou.html" class="card featured reveal">
+      <a href="blue-ghost-bayou.html" class="card featured reveal" data-cat="nature">
         <div class="card-img-wrap">
           <img src="BlueGhostBayou.jpg" alt="Blue Ghost Dickinson Bayou Texas" class="card-img"/>
         </div>
@@ -645,7 +661,7 @@
         </div>
       </a>
 
-      <a href="marfa-lights.html" class="card reveal">
+      <a href="marfa-lights.html" class="card reveal" data-cat="ufo">
         <div class="card-img-wrap">
           <img src="Themarfalight.jpg" alt="The Marfa Lights" class="card-img"/>
         </div>
@@ -657,7 +673,7 @@
         </div>
       </a>
 
-      <a href="ghost-towns.html" class="card reveal">
+      <a href="ghost-towns.html" class="card reveal" data-cat="haunted">
         <div class="card-img-wrap">
           <img src="Fiveghosttownstexas.jpg" alt="Five Ghost Towns Texas" class="card-img"/>
         </div>
@@ -669,7 +685,7 @@
         </div>
       </a>
 
-      <a href="ufo-sightings.html" class="card reveal">
+      <a href="ufo-sightings.html" class="card reveal" data-cat="ufo">
         <div class="card-img-wrap">
           <img src="TexasUFOSightings.jpg" alt="Texas UFO Sightings" class="card-img"/>
         </div>
@@ -681,7 +697,7 @@
         </div>
       </a>
 
-      <a href="chupacabra.html" class="card reveal">
+      <a href="chupacabra.html" class="card reveal" data-cat="legends">
         <div class="card-img-wrap">
           <img src="TheLegendoftheTexasChupacabra.jpg" alt="Texas Chupacabra" class="card-img"/>
         </div>
@@ -693,7 +709,7 @@
         </div>
       </a>
 
-      <a href="unsolved-murders.html" class="card reveal">
+      <a href="unsolved-murders.html" class="card reveal" data-cat="crime">
         <div class="card-img-wrap">
           <img src="UnsolvedMurdersThatStillHauntTexasTrueCrime.jpg" alt="Unsolved Murders Texas" class="card-img"/>
         </div>
@@ -705,7 +721,7 @@
         </div>
       </a>
 
-      <a href="strange-animals.html" class="card reveal">
+      <a href="strange-animals.html" class="card reveal" data-cat="nature">
         <div class="card-img-wrap">
           <img src="StrangeNature.jpg" alt="Strange Animals Texas" class="card-img"/>
         </div>
@@ -717,7 +733,7 @@
         </div>
       </a>
 
-      <a href="underground-caves.html" class="card reveal">
+      <a href="underground-caves.html" class="card reveal" data-cat="nature">
         <div class="card-img-wrap">
           <img src="TheSilentDeep.jpg" alt="Underground Caves Texas" class="card-img"/>
         </div>
@@ -729,7 +745,7 @@
         </div>
       </a>
 
-      <a href="weird-festivals.html" class="card reveal">
+      <a href="weird-festivals.html" class="card reveal" data-cat="culture">
         <div class="card-img-wrap">
           <img src="Weiredsttexas.jpg" alt="Weird Texas Festivals" class="card-img"/>
         </div>
@@ -741,7 +757,7 @@
         </div>
       </a>
 
-      <a href="strange-laws.html" class="card reveal">
+      <a href="strange-laws.html" class="card reveal" data-cat="culture">
         <div class="card-img-wrap">
           <img src="TheEchoesofTexasLaw.jpg" alt="Strange Texas Laws" class="card-img"/>
         </div>
@@ -765,12 +781,13 @@
   </div>
   <div class="cats-wrap">
     <div class="cats-row reveal">
-      <a href="#" class="cat"><span class="cat-icon">👻</span><span class="cat-name">Haunted</span><span class="cat-count">2 stories</span></a>
-      <a href="#" class="cat"><span class="cat-icon">🛸</span><span class="cat-name">UFO</span><span class="cat-count">2 stories</span></a>
-      <a href="#" class="cat"><span class="cat-icon">🦎</span><span class="cat-name">Legends</span><span class="cat-count">2 stories</span></a>
-      <a href="#" class="cat"><span class="cat-icon">🔍</span><span class="cat-name">True Crime</span><span class="cat-count">1 story</span></a>
-      <a href="#" class="cat"><span class="cat-icon">🌿</span><span class="cat-name">Nature</span><span class="cat-count">2 stories</span></a>
-      <a href="#" class="cat"><span class="cat-icon">🎭</span><span class="cat-name">Culture</span><span class="cat-count">2 stories</span></a>
+      <button type="button" class="cat is-active" data-filter="all"><span class="cat-icon">✦</span><span class="cat-name">All</span><span class="cat-count">13 stories</span></button>
+      <button type="button" class="cat" data-filter="haunted"><span class="cat-icon">👻</span><span class="cat-name">Haunted</span><span class="cat-count">2 stories</span></button>
+      <button type="button" class="cat" data-filter="ufo"><span class="cat-icon">🛸</span><span class="cat-name">UFO</span><span class="cat-count">2 stories</span></button>
+      <button type="button" class="cat" data-filter="legends"><span class="cat-icon">🦎</span><span class="cat-name">Legends</span><span class="cat-count">1 story</span></button>
+      <button type="button" class="cat" data-filter="crime"><span class="cat-icon">🔍</span><span class="cat-name">True Crime</span><span class="cat-count">1 story</span></button>
+      <button type="button" class="cat" data-filter="nature"><span class="cat-icon">🌿</span><span class="cat-name">Nature</span><span class="cat-count">5 stories</span></button>
+      <button type="button" class="cat" data-filter="culture"><span class="cat-icon">🎭</span><span class="cat-name">Culture</span><span class="cat-count">2 stories</span></button>
     </div>
   </div>
 </section>
@@ -796,6 +813,24 @@
     });
   }, { threshold: 0.1 });
   reveals.forEach(el => obs.observe(el));
+
+  // Category filtering
+  const filterBtns = document.querySelectorAll('.cat[data-filter]');
+  const storyCards = document.querySelectorAll('.card[data-cat]');
+  const storiesSection = document.getElementById('stories');
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const f = btn.getAttribute('data-filter');
+      filterBtns.forEach(b => b.classList.toggle('is-active', b === btn));
+      storyCards.forEach(card => {
+        const show = f === 'all' || card.getAttribute('data-cat') === f;
+        card.classList.toggle('is-hidden', !show);
+      });
+      if (storiesSection) {
+        storiesSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    });
+  });
 </script>
 
 </body>
