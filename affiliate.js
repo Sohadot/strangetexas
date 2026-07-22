@@ -9,7 +9,7 @@
 (function () {
   "use strict";
 
-  var AMAZON_TAG = ""; // <-- paste your Amazon Associates tag here to go live
+  var AMAZON_TAG = "strangetexa05-20"; // Amazon Associates tag — LIVE
 
   if (!AMAZON_TAG) return; // stays completely invisible until activated
 
